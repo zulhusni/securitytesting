@@ -19,3 +19,10 @@ steps:
     npm install
     npm run build
   displayName: 'npm install and build'
+
+- task: SnykSecurityScan@0
+  inputs:
+    serviceConnectionEndpoint: 'Snyk Authentication'
+    testType: 'app'
+    monitorOnBuild: true
+    failOnIssues: true
