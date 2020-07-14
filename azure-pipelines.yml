@@ -20,7 +20,6 @@ steps:
 - task: DockerCompose@0
   inputs:
     containerregistrytype: 'Azure Container Registry'
-#    dockerComposeFile: '**/docker-compose.yml'
     action: 'Run a Docker Compose command'
     dockerComposeCommand: 'docker run -i owasp/zap2docker-stable zap-cli quick-scan --self-contained \     --start-options ''-config api.disablekey=true'' http://target'
 
