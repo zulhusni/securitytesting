@@ -23,8 +23,8 @@ steps:
 - task: owaspzap@1
   inputs:
     scantype: 'targetedScan'
-    url: 'https://owasp.org/www-project-webgoat'
-    aggressivemode: false
+    url: 'https://example.com'
+    aggressivemode: true
   
 - task: CopyFiles@2
   condition: always()
