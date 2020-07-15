@@ -10,15 +10,15 @@ pool:
   vmImage: 'ubuntu-latest'
 
 steps:
-- task: NodeTool@0
-  inputs:
-    versionSpec: '10.x'
-  displayName: 'Install Node.js'
+# - task: NodeTool@0
+#   inputs:
+#     versionSpec: '10.x'
+#   displayName: 'Install Node.js'
 
-- script: |
-    npm install
-    npm run build
-  displayName: 'npm install and build'
+# - script: |
+#     npm install
+#     npm run build
+#   displayName: 'npm install and build'
 
 # - task: owaspzap@1
 #   inputs:
@@ -27,9 +27,12 @@ steps:
 #     aggressivemode: true
 
 - task: owaspzap@1
+  displayName: 'ZAP Scanner'
   inputs:
+    scantype: targetedScan
+    url: 'https://dotnetthoughts.net'
     aggressivemode: true
-  
+
 - task: CopyFiles@2
   condition: always()
   inputs:
