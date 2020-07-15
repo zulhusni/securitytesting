@@ -24,7 +24,7 @@ steps:
   inputs:
     scantype: 'targetedScan'
     url: 'https://owasp.org/www-project-webgoat'
-    aggressivemode: true
+    aggressivemode: false
   
 - task: CopyFiles@2
   condition: always()
