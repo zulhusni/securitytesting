@@ -23,7 +23,7 @@ steps:
 - task: owaspzap@1
   inputs:
     scantype: 'targetedScan'
-    url: 'http://example.com'
+    url: 'https://owasp.org/www-project-webgoat'
   
 - task: CopyFiles@2
   condition: always()
