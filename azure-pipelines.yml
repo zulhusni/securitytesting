@@ -20,10 +20,14 @@ steps:
     npm run build
   displayName: 'npm install and build'
 
+# - task: owaspzap@1
+#   inputs:
+#     scantype: 'targetedScan'
+#     url: 'https://example.com'
+#     aggressivemode: true
+
 - task: owaspzap@1
   inputs:
-    scantype: 'targetedScan'
-    url: 'https://example.com'
     aggressivemode: true
   
 - task: CopyFiles@2
