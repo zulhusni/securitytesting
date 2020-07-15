@@ -22,7 +22,8 @@ steps:
 
 - task: owaspzap@1
   inputs:
-    aggressivemode: true
+    scantype: 'targetedScan'
+    url: 'http://example.com'
 
 - task: SnykSecurityScan@0
   inputs:
