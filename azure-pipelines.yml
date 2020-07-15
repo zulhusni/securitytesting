@@ -20,6 +20,10 @@ steps:
     npm run build
   displayName: 'npm install and build'
 
+- task: owaspzap@1
+  inputs:
+    aggressivemode: true
+
 - task: SnykSecurityScan@0
   inputs:
     serviceConnectionEndpoint: 'Snyk Authentication'
