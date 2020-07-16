@@ -10,21 +10,15 @@ pool:
   vmImage: 'ubuntu-latest'
 
 steps:
-# - task: NodeTool@0
-#   inputs:
-#     versionSpec: '10.x'
-#   displayName: 'Install Node.js'
+- task: NodeTool@0
+  inputs:
+    versionSpec: '10.x'
+  displayName: 'Install Node.js'
 
-# - script: |
-#     npm install
-#     npm run build
-#   displayName: 'npm install and build'
-
-# - task: owaspzap@1
-#   inputs:
-#     scantype: 'targetedScan'
-#     url: 'https://example.com'
-#     aggressivemode: true
+- script: |
+    npm install
+    npm run build
+  displayName: 'npm install and build'
 
 - task: owaspzap@1
   displayName: 'ZAP Scanner'
@@ -99,7 +93,7 @@ steps:
   displayName: 'owasp nunit template'
   condition: always()
 
-- bash: ' handlebars owaspzap/report.json < owaspzap/nunit-template.hbs > owaspzap/test-results7.xml'
+- bash: ' handlebars owaspzap/report.json < owaspzap/nunit-template.hbs > owaspzap/test-results.xml'
   displayName: 'generate nunit type file'
   condition: always()
 
@@ -107,7 +101,7 @@ steps:
   displayName: 'Publish Test Results **/TEST-*.xml'
   inputs:
     testResultsFormat: NUnit
-    testResultsFiles: 'owaspzap/test-results7.xml'
+    testResultsFiles: 'owaspzap/test-results.xml'
   condition: always()
 
 - task: SnykSecurityScan@0
