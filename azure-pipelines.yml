@@ -30,7 +30,7 @@ steps:
   displayName: 'ZAP Scanner'
   inputs:
     scantype: targetedScan
-    url: 'https://dotnetthoughts.net'
+    url: 'https://example.com'
     aggressivemode: true
 
 - task: CopyFiles@2
