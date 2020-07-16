@@ -30,7 +30,7 @@ steps:
   displayName: 'ZAP Scanner'
   inputs:
     scantype: 'targetedScan'
-    url: 'https://example.com'
+    url: 'https://www.hackthissite.org/'
     aggressivemode: false
 
 - task: CopyFiles@2
