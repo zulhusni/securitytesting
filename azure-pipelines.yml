@@ -29,7 +29,7 @@ steps:
 - task: owaspzap@1
   displayName: 'ZAP Scanner'
   inputs:
-    scantype: targetedScan
+    scantype: 'targetedScan'
     url: 'https://example.com'
     aggressivemode: false
 
